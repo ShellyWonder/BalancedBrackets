@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <title>NAME: A Coding Project by SJ Wonder</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
+  <!--using font awesome-->
+  <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+  <link href="css/site.css" rel="stylesheet" />
+  <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
+  <link href="/css/prism.css" rel="stylesheet" />
+  <!--add ADOBE FONTS LINK HERE-->
+</head>
+
+<body class="d-flex flex-column h-100">
+  <!--Nav section-->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <!--CHANGE THIS LINK-->
+      <a class="navbar-brand logoFont" href="index.html"><img src="img/logoMarkWhite.png" class="p-1" width="30"
+          height="39" />NAME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
+          </li>
+          <li class="nav-item">
+            <!--CHANGE THIS LINK-->
+            <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder/js_speedway2022">Git Repo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://sjwonder-portfolio-2022.netlify.app/#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Main section-->
+  <main class="flex-shrink-0">
+    <div class="container py-5 px-5 mt-5">
+      <h2 class="border-1 border-bottom border-dark">The Code</h2>
+      <div class="row row-cols-1 row-cols-lg-2">
+        <!--CODE EMBED-->
+        <div class="col-lg-8">
+          <pre class="line-numbers">
+            <code class="language-javascript">
+              ///INITIATION:
+              
+              //Program Entry points
+              function getValues2() {
+              let startValue = document.getElementById("startValue").value;
+              let endValue = document.getElementById("endValue").value;
+
+              //VALIDATION:
+              startValue = parseInt(startValue);
+              endValue = parseInt(endValue);
+
+              //check to see if input is integer
+              if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+              //generate list of numbers
+              let numbers = generateNumbers(startValue, endValue);
+              displayNumbers(numbers);
+              } else {
+              Swal.fire({
+              icon: "error",
+              title: "oops",
+              text: "only integers are allowed for JS Speedway"
+              })
+              }
+              }
+              //LOGIC:
+              function generateNumbers(start, end) {
+              let numbers = [];
+              for (let index = start; index <= end; index++) { 
+                numbers.push(index); 
+              } 
+              return numbers; 
+            } 
+            //DISPLAY:
+            function displayNumbers(numbers) { 
+              let templateRows="" ; 
+              let className="even" ; 
+              for (let index=0; index < numbers.length; index++) { 
+                  let number=numbers[index]; 
+                  if (number % 2===0) { 
+                  className="even" ; 
+                } else {
+                className="odd" ;
+               } 
+               let row=`<tr><td class="${className}">${number}</td></tr>`;
+                templateRows += row;
+                }
+                document.getElementById("results").innerHTML = templateRows;
+                }
+              
+            </code>
+          </pre>
+        </div>
+        <!--CODE EXPLANATION-->
+        <div class="col-lg-4">
+          <p>The code is structured in three functions.</p>
+          <!--CHANGE THIS LINK-->
+          <h5 class="logoFont">CHANGE THIS TITLE</h5>
+          <p>
+            .JS Speedway is a simple program looping input integers and displaying them to the page. Even numbers are
+            bolded.
+          </p>
+          <h4>Brief code overview:</h4>
+          <ul>
+            <li>Initiation:
+              <ul>
+                <li>event listener (located in the bottom &lt;script&gt; tag) is triggered by a "click" on the "submit"
+                  button.
+                </li><br>
+                <li>Inputs from the two user fields ("Start Value" and "End Value") are passed into the "Get Values"
+                  function.</li><br>
+              </ul>
+
+            </li>
+            <li>Validation:
+              <ul>
+                <li>Inputs are checked to make certain they are integers (numbers) and not strings.</li> <br>
+
+                <li>If inputs are numbers treated as strings, the program parses them to integers.</li><br>
+                <li>If inputs are text, the system will alert the user, "Only integers are allowed for JS Speedway."
+                </li> <br>
+              </ul>
+            </li>
+            <li>Logic:
+              <p>Within the "Generate Numbers" function, the following processes occur:
+              </p>
+              <ul>
+                <li>the "numbers" array is created</li> <br>
+
+                <li>the "for" loop passes the start value and increments the number by one. </li><br>
+                <li>the produced number is pushed to the "numbers" array.</li><br>
+
+                <li>Meanwhile, produced numbers are re-introduced into the loop until the incremented number is equal to
+                  the End Value.</li><br>
+                <li>the function returns the "numbers" array.</li><br>
+              </ul>
+
+            </li>
+
+          </ul>
+
+          </li>
+          <ul>
+            <li>Display:
+              <ul>
+                <li>Inside the "for" loop: </li> <br>
+                <ul>
+                  <li>A boolean tests each number in the "numbers" array by dividing each number by 2 to determine
+                    whether the number is even. </li><br>
+                  <li>Numbers testing "true" are bolded.</li><br>
+                  <li>Numbers testing "false" are not bolded.</li><br>
+                </ul>
+                <li> "Template Rows" variable injects the "Number" variable (from the "Display Numbers" function) into
+                  the template literal. </li><br>
+                <li>Finally, "Template Rows" are published to the HTML via the "results" class.</li><br>
+              </ul>
+          </ul>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--footer section-->
+  <footer class="footer mt-auto py-3 bg-dark sticky-footer">
+    <div class="container-fluid">
+      <div class="row row-cols-1 row-cols-lg-3 gy-2">
+        <div class="col order-last order-lg-first text-light">
+          <div>
+            <span class="text-muted">&copy;2022</span>&nbsp;SJ Wonder |
+            <a href="mailto:Shelly@wonderwebdev"> Shelly@wonderwebdev.com</a>
+          </div>
+        </div>
+        <div class="
+              col
+              d-flex
+              align-items-center
+              justify-content-start justify-content-lg-center
+            ">
+          <img src="img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
+        </div>
+        <!--using font awesome for social media icons-->
+        <div class="
+              col
+              d-flex
+              align-items-center
+              justify-content-start justify-content-lg-end
+            ">
+          <div class="row">
+            <div class="col">
+              <a href="https://www.linkedin.com/in/shelly-wonder-153990233/"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
+            <div class="col">
+              <a href="https://github.com/ShellyWonder"><i class="fab fa-github fa-2x"></i></a>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <!--container close tag-->
+    </div>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+  <!--INLINE Prism JS-->
+  <script src="/js/prism.js"></script>
+  <script>
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+      "remove-trailing": true,
+      "remove-indent": true,
+      "left-trim": true,
+      "right-trim": true,
+    });
+  </script>
+</body>
+
+</html>
