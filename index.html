@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>Code Challenge: A Coding Project by SJ Wonder</title>
+    <title>Balanced Brackets: A Coding Project by SJ Wonder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -24,6 +24,7 @@
     <link href="css/site.css" rel="stylesheet" />
     <link rel="icon" type="img/png" href="img/favicon/favicon-32x32.png" />
     <!--add ADOBE FONTS LINK HERE-->
+    <link rel="stylesheet" href="https://use.typekit.net/dpe2eho.css" />
   </head>
 
   <body class="d-flex flex-column h-100">
@@ -36,7 +37,7 @@
             class="p-1"
             width="30"
             height="39"
-          />Project Name</a
+          />Balanced Brackets</a
         >
         <button
           class="navbar-toggler"
@@ -64,7 +65,7 @@
               <a
                 class="nav-link"
                 target="_blank"
-                href="https://github.com/ShellyWonder/js_speedway2022"
+                href="https://github.com/ShellyWonder/BalancedBrackets"
                 >Git Repo</a
               >
             </li>
@@ -81,49 +82,60 @@
       </div>
     </nav>
     <!--Main section-->
-    <main class="flex-shrink-0">
-      <div class="container col-xxl-8 px-4 py-5">
-        <div class="row g-5 py-5 row-cols-1 row-cols-lg-2">
-          <div class="col order-last order-lg-first">
-            <h1 class="display-5 fw-bold 1h-1 mb-3">
-              <span class="logoFont">NAME</span>: A Coding Challenge
-            </h1>
-            <h4 class="lead">brief description</h4>
-            <p>
-              FUN FACT:
-              <span class="text-black">
-                Even numbers are displayed as<strong> BOLD.</strong></span
-              >
-            </p>
-
-            <div>
-              <a
-                type="button"
-                class="btn btn-primary btn-lg px-4 me-md-2"
-                href="app.html"
-                >Take a Test Drive!</a
-              >
-            </div>
-            <div class="d-flex">
-              <div class="row">
-                <div class="col">
-                  <h2 class="fw-bold mt-4">MORE INFORMATION</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="col d-flex align-content-center">
-              <img
-                src="/img/codersATWork.png"
-                class="img-fluid center-block mx-auto"
-                alt="j_s Speedway logo"
-                width="700"
-                height="500"
-              />
-            </div>
-          </div>
+    <main class="container-fluid h-100 pt-5 px-5">
+      <div class="row pt-5">
+        <div class="col-12 col-md-6">
+          <h1>
+            Check for <span class="logoFont"> Balanced Brackets</span> in a
+            String
+          </h1>
+          <p class="lead">
+            Given the string <strong>[()]{}{[()()]()}</strong>, this program
+            determines if all brackets have a matching counterpart. <br />
+            If all brackets in the string form balanced pairs, it returns
+            <strong>true</strong>. If not, it returns <strong>false</strong>.
+          </p>
+          <p class="lead">What brackets are balanced?</p>
+          <table class="table table-dark table-striped examples">
+            <caption>
+              Note: You can use these scenarios to test your function
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Brackets</th>
+                <th scope="col">Balanced?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>([{}])</td>
+                <td>
+                  <i class="bi bi-check-circle-fill checkMark"></i>
+                </td>
+              </tr>
+              <tr>
+                <td>[(])</td>
+                <td><i class="bi bi-x-octagon-fill xMark"></i></td>
+              </tr>
+              <tr>
+                <td>{(})[]</td>
+                <td><i class="bi bi-x-octagon-fill xMark"></i></td>
+              </tr>
+              <tr>
+                <td>{()[]}</td>
+                <td><i class="bi bi-check-circle-fill checkMark"></i></td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="btnSubmit" type="button" class="btn btn-warning">
+            Check Brackets
+          </button>
+        </div>
+        <div class="col-12 col-md-6 order-first order-md-2">
+          <img src="/img/balancedBracketsImg.png" class="img-fluid" />
+        </div>
+        <div class="col-12 order-last mt-4 mb-2">
+          <div id="results" class="display-5">Result Goes Here</div>
         </div>
       </div>
     </main>
