@@ -1,54 +1,71 @@
-//CONTROLLER 
-function getValues() {
+//balanced
+const testbrackets1 = "[()]{}{[()()]()}";
+//balanced
+const testbrackets2 = `([{}])`;
+//not balanced
+const testbrackets3 = "{(})[]";
+//not balanced
+const testbrackets4 = "[(])";
+//not balanced
+const testbrackets5 = "[()";
 
-}
-//PROGRAM ENTRY POINTS
-function getValues2() {
-  let startValue = document.getElementById("startValue").value;
-  let endValue = document.getElementById("endValue").value;
+//driver function used for display and passing values.
+function checkBrackets() {
+  //chng testBrackets here.
+  let testBrackets = testbrackets1;
+  //implement isBalanced Function--Checks if bracket string is balanced.
+  let results = isBalanced(testbrackets2);
+  //used for display 
+  let msg = " ";
 
-  //VALIDATION
-  startValue = parseInt(startValue);
-  endValue = parseInt(endValue);
-
-  //check to see if input is integer
-  if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-    //generate list of numbers
-    let numbers = generateNumbers(startValue, endValue);
-    displayNumbers(numbers);
+  if (results ==true) {
+    msg = `Brackets are balanced ==> ${testBrackets}`;
   } else {
-    Swal.fire({
-      icon: "error",
-      title: "oops",
-      text: "only integers are allowed for JS Speedway"
-    })
+     msg = `Brackets are NOT balanced ==> ${testBrackets}`;
   }
+  //display the message
+  document.getElementById("results").innerHTML = msg;
 }
+//takes an array of strings and returns the longest one.
+function isBalanced(brackets) {
+  //declare an array
+  let stack = [];
+  //loop over the string(s)
 
-function generateNumbers(start, end) {
-  let numbers = [];
-  for (let index = start; index <= end; index++) {
-    numbers.push(index);
-  }
-  return numbers;
-}
-
-function displayNumbers(numbers) {
-
-  let templateRows = "";
-  let className = "even";
-  for (let index = 0; index < numbers.length; index++) {
-
-    let number = numbers[index];
-
-    if (number % 2 === 0) {
-      className = "even";
-
-    } else {
-      className = "odd";
+  for (let index = 0; index < brackets.length; index++) {
+    
+    let item = brackets[index];
+//comparison operator
+    if (item == '(' || item== '{' || item== '[') {
+      stack.push(item);
+      continue;
+    } else if (item == ')' || item == '}' || item == ']') {
+      
+      if (stack.length == 0) {
+        return false;
+      }
+      check = stack.pop();
+      switch (item) {
+        case ')':
+          if (check != '(') {
+            return false;
+          }
+          break;
+        
+        case '}':
+          if (check != '{') {
+            return false;
+          }
+          break;
+        
+        case ']':
+          if (check != '[') {
+            return false;
+          }
+          break;
+      }
     }
-    let row = `<tr><td class="${className}">${number}</td></tr>`;
-    templateRows += row;
+    
   }
-  document.getElementById("results").innerHTML = templateRows;
+  return stack.length == 0;
 }
