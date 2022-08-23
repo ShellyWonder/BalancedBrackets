@@ -8,9 +8,11 @@
 
 /*change logoFont with each project*/
 .logoFont {
-  font-family: ltc-broadway-engraved, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+  font-family: caraque-melted, sans-serif;
+  
+    font-weight: 400;
+  
+    font-style: normal;
 }
 
 main > .container {
@@ -33,24 +35,20 @@ h6 {
   background-color: var(--sjw-background-color) !important;
 }
 
-.jsicon {
-  color: rgb(226, 211, 4);
+/*Mark styles*/
+
+.checkMark {
+  font-size: 1.5rem;
+  color: rgb(62, 255, 62);
 }
 
-.bsicon {
-  color: purple;
+.xMark {
+  font-size: 1.5rem;
+  color: red;
 }
 
-.htmlicon {
-  color: #ff4500;
-}
-
-.cssicon {
-  color: #0b52d6;
-}
-
-.checkListIcon {
-  color: var(--sjw-secondary-color);
+.examples td {
+  font-size: 1.5rem;
 }
 
 /*--button styles override Bootstrap styles--*/
