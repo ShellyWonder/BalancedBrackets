@@ -26,7 +26,8 @@ function checkBrackets() {
   //display the message
   document.getElementById("results").innerHTML = msg;
 }
-//takes an array of strings and returns the longest one.
+//takes an array of strings and returns the longest one.Two options:
+//option A
 function isBalanced(brackets) {
   //declare an array
   let stack = [];
@@ -69,3 +70,31 @@ function isBalanced(brackets) {
   }
   return stack.length == 0;
 }
+//option B
+function isBalancedB(brackets) {
+  let stack = [];
+  let openBrackets = ["(", "{", "["];
+  let closeBrackets = [")", "}", "]"];
+  let balancedBrackets = {
+    "(": ")",
+    "{": "}",
+    "[": "]"
+  };
+  for (let index = 0; index < brackets.length; index++) {
+    let item = brackets[index];
+    if (openBrackets.includes(item)) {
+      stack.push(item);
+      continue;
+    } else if (stack.length == 0) {
+      return false;
+    }
+    check = stack.pop();
+    if (balancedBrackets[check] != item) {
+        
+      return false;
+    }
+
+  }
+    
+}
+return stack.length == 0;
