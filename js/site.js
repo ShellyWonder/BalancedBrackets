@@ -14,7 +14,7 @@ function checkBrackets() {
   //chng testBrackets here.
   let testBrackets = testbrackets1;
   //implement isBalanced Function--Checks if bracket string is balanced.
-  let results = isBalanced(testbrackets2);
+  let results = isBalancedB(testbrackets2);
   //used for display 
   let msg = " ";
 
@@ -96,5 +96,5 @@ function isBalancedB(brackets) {
 
   }
     
+  return stack.length == 0;
 }
-return stack.length == 0;

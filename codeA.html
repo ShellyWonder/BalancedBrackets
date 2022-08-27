@@ -36,8 +36,11 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/code.html">The Code</a>
-          </li>
+              <a class="nav-link active" aria-current="page" href="/codeA.html">The Code A</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/codeB.html">The Code B</a>
+            </li>
           <li class="nav-item">
             <!--CHANGE THIS LINK-->
             <a class="nav-link" target="_blank" href="https://github.com/ShellyWonder/BalancedBrackets">Git Repo</a>
@@ -52,60 +55,84 @@
   <!--Main section-->
   <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-      <h2 class="border-1 border-bottom border-dark">The Code</h2>
+      <h2 class="border-1 border-bottom border-dark">The Code - Option A</h2>
       <div class="row row-cols-1 row-cols-lg-2">
         <!--CODE EMBED-->
         <div class="col-lg-8">
           <pre class="line-numbers">
             <code class="language-javascript">
-              ///INITIATION:
-              
-              //Program Entry points
-              function getValues2() {
-              let startValue = document.getElementById("startValue").value;
-              let endValue = document.getElementById("endValue").value;
+              //balanced
+const testbrackets1 = "[()]{}{[()()]()}";
+//balanced
+const testbrackets2 = `([{}])`;
+//not balanced
+const testbrackets3 = "{(})[]";
+//not balanced
+const testbrackets4 = "[(])";
+//not balanced
+const testbrackets5 = "[()";
 
-              //VALIDATION:
-              startValue = parseInt(startValue);
-              endValue = parseInt(endValue);
+//driver function used for display and passing values.
+function checkBrackets() {
+  //chng testBrackets here.
+  let testBrackets = testbrackets1;
+  //implement isBalanced Function--Checks if bracket string is balanced.
+  let results = isBalancedB(testbrackets2);
+  //used for display 
+  let msg = " ";
 
-              //check to see if input is integer
-              if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
-              //generate list of numbers
-              let numbers = generateNumbers(startValue, endValue);
-              displayNumbers(numbers);
-              } else {
-              Swal.fire({
-              icon: "error",
-              title: "oops",
-              text: "only integers are allowed for JS Speedway"
-              })
-              }
-              }
-              //LOGIC:
-              function generateNumbers(start, end) {
-              let numbers = [];
-              for (let index = start; index <= end; index++) { 
-                numbers.push(index); 
-              } 
-              return numbers; 
-            } 
-            //DISPLAY:
-            function displayNumbers(numbers) { 
-              let templateRows="" ; 
-              let className="even" ; 
-              for (let index=0; index < numbers.length; index++) { 
-                  let number=numbers[index]; 
-                  if (number % 2===0) { 
-                  className="even" ; 
-                } else {
-                className="odd" ;
-               } 
-               let row=`<tr><td class="${className}">${number}</td></tr>`;
-                templateRows += row;
-                }
-                document.getElementById("results").innerHTML = templateRows;
-                }
+  if (results ==true) {
+    msg = `Brackets are balanced ==> ${testBrackets}`;
+  } else {
+     msg = `Brackets are NOT balanced ==> ${testBrackets}`;
+  }
+  //display the message
+  document.getElementById("results").innerHTML = msg;
+}
+//takes an array of strings and returns the longest one.Two options:
+//option A
+function isBalanced(brackets) {
+  //declare an array
+  let stack = [];
+  //loop over the string(s)
+
+  for (let index = 0; index < brackets.length; index++) {
+    
+    let item = brackets[index];
+//comparison operator
+    if (item == '(' || item== '{' || item== '[') {
+      stack.push(item);
+      continue;
+    } else if (item == ')' || item == '}' || item == ']') {
+      
+      if (stack.length == 0) {
+        return false;
+      }
+      check = stack.pop();
+      switch (item) {
+        case ')':
+          if (check != '(') {
+            return false;
+          }
+          break;
+        
+        case '}':
+          if (check != '{') {
+            return false;
+          }
+          break;
+        
+        case ']':
+          if (check != '[') {
+            return false;
+          }
+          break;
+      }
+    }
+    
+  }
+  return stack.length == 0;
+}
               
             </code>
           </pre>
