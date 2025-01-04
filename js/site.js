@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  updateCopyrightYear();
+});
+
 //balanced
 const testbrackets1 = "[()]{}{[()()]()}";
 //balanced
@@ -97,4 +101,8 @@ function isBalancedB(brackets) {
   }
     
   return stack.length == 0;
+}
+function updateCopyrightYear() {
+  const currentYear = new Date().getFullYear();
+  document.getElementById("copyrightYear").textContent = currentYear;
 }
