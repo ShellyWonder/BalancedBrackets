@@ -46,8 +46,6 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/codeA.html">The Code A</a></li>
-          <li class="nav-item"><a class="nav-link" href="/codeB.html">The Code B</a></li>
           <li class="nav-item"><a class="nav-link" target="_blank"
               href="https://github.com/ShellyWonder/BalancedBrackets">Git Repo</a></li>
           <li class="nav-item"><a class="nav-link" target="_blank"
@@ -106,8 +104,25 @@
         <button id="btnSubmit" type="button" class="btn btn-warning">Check Brackets</button>
       </div>
       <div class="col-12 col-md-6 order-first order-md-2">
+
+        <div class="row">
+          <div class="col-12">
         <img src="/img/balancedBracketsImg.png" class="img-fluid" />
+          </div>
+          <div class="col-12 mt-1">
+            <h2 class="text-center logoFont">Give it a Try!</h2>
+            <p class="lead text-center">Enter your string of brackets below:</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Input to check for balanced brackets" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn btn-primary btn-outline-warning" type="button" id="inputAction">Try it!</button>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="col-12 order-last mt-4 mb-2">
+        <div id="results" class="display-5">
+           Result Goes Here
+        </div>
     </div>
   </main>
 
@@ -132,18 +147,11 @@
       </div>
     </div>
   </footer>
-
-    
-    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"></script>
     <script src="/js/site.js"></script>
-    <script>
-      document
-        .getElementById("btnSubmit")
-        .addEventListener("click", checkBrackets);
-    </script>
+    
   </body>
 </html>
