@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   updateCopyrightYear();
   document.getElementById("btnSubmit")
-        .addEventListener("click", checkBrackets);
+        .addEventListener("click", handleButtonClick);
   document.getElementById("btnInput")
         .addEventListener("click", checkBrackets);
 });
 //**Demo Data Set ** */
 const testBrackets = "[()]{}{[()()]()}";
+
+// Function to handle button click event
+function handleButtonClick() {
+  // Hide the button
+  document.getElementById("btnSubmit").style.display = 'none';
+  
+  // Find the parent <td> and insert the checkmark icon
+  const checkmarkTd = document.querySelector('#btnSubmit').closest('td');
+  checkmarkTd.innerHTML = '<i class="bi bi-check-circle-fill checkMark"></i>';
+  
+  // Optional: Call the checkBrackets function to perform any additional logic
+  checkBrackets();
+}
 
 //driver function used for display and passing values.
 function checkBrackets() {
