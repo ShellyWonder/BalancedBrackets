@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("btnSubmit")
     .addEventListener("click", handleButtonClick);
-    document.getElementById("btnInput").addEventListener("click", () => {
-      handleInput();
-    });
-    
-    document.querySelector('input[placeholder="Input to check for balanced brackets"]').addEventListener("keypress", (event) => {
+  document.getElementById("btnInput").addEventListener("click", () => {
+    handleInput();
+  });
+
+  document
+    .querySelector('input[placeholder="Input to check for balanced brackets"]')
+    .addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
         event.preventDefault(); // Prevent form submission if inside a form
         handleInput();
@@ -25,8 +27,6 @@ function handleButtonClick() {
   // Find the parent <td> and insert the checkmark icon
   const checkmarkTd = document.querySelector("#btnSubmit").closest("td");
   checkmarkTd.innerHTML = '<i class="bi bi-check-circle-fill checkMark"></i>';
-
-  // Optional: Call the checkBrackets function to perform any additional logic
   checkBrackets();
 }
 
@@ -54,8 +54,6 @@ function checkBrackets(brackets) {
 
   // Append the new row to the table
   tableBody.appendChild(newRow);
-
-
 }
 function isBalanced(brackets) {
   let stack = [];
@@ -79,14 +77,16 @@ function isBalanced(brackets) {
 }
 
 function handleInput() {
-  const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
-      const userBracket = inputField.value.trim(); //trim whitespace
-      if (userBracket === '') {
-        alert('Please enter a string of brackets.');  
-        return; // Exit the function if the input is empty
-      }
-      checkBrackets(userBracket);
-      inputField.value = ''; // Clear the input field
+  const inputField = document.querySelector(
+    'input[placeholder="Input to check for balanced brackets"]'
+  );
+  const userBracket = inputField.value.trim(); //trim whitespace
+  if (userBracket === "") {
+    alert("Please enter a string of brackets.");
+    return; // Exit the function if the input is empty
+  }
+  checkBrackets(userBracket);
+  inputField.value = ""; // Clear the input field
 }
 // Function to update the copyright year in the footer
 function updateCopyrightYear() {
