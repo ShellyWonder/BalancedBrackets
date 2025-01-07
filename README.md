@@ -1,5 +1,5 @@
-# Balanced Brackets Checker
 ![alt text](balancedBracketsImg.png)
+# Balanced Brackets Checker
 This project is a web-based application that allows users to check if a given string of brackets (`{}`, `()`, `[]`) is balanced. The application is built using HTML, CSS, and JavaScript, and it provides a simple interface for user interaction.
 
 ## Features
