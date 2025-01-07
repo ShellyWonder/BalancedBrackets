@@ -85,10 +85,12 @@ function handleInput() {
     alert("Please enter a string of brackets.");
     return; // Exit the function if the input is empty
   }
-  checkBrackets(userBracket);
+  // Filter input to only include {}, (), []
+  const filteredInput = userBracket.replace(/[^{}()\[\]]/g, '');
+  checkBrackets(filteredInput);
   inputField.value = ""; // Clear the input field
 }
-// Function to update the copyright year in the footer
+// Updates copyright year in the footer
 function updateCopyrightYear() {
   const currentYear = new Date().getFullYear();
   document.getElementById("copyrightYear").textContent = currentYear;
