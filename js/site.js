@@ -5,18 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", handleButtonClick);
     document.getElementById("btnInput").addEventListener("click", () => {
       const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
-      const userBracket = inputField.value;
+      const userBracket = inputField.value.trim(); //trim whitespace
+      if (userBracket === '') {
+        alert('Please enter a string of brackets.');  
+        return; // Exit the function if the input is empty
+      }
       checkBrackets(userBracket);
       inputField.value = ''; // Clear the input field
+
     });
     
     document.querySelector('input[placeholder="Input to check for balanced brackets"]').addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
         event.preventDefault(); // Prevent form submission if inside a form
         const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
-        const userBracket = inputField.value;
+        const userBracket = inputField.value.trim(); //trim whitespace
+        if (userBracket === '') {
+          alert('Please enter a string of brackets.');  
+          return; // Exit the function if the input is empty
+        }
         checkBrackets(userBracket);
         inputField.value = ''; // Clear the input field
+  
       }
     });
 });
@@ -61,13 +71,7 @@ function checkBrackets(brackets) {
   // Append the new row to the table
   tableBody.appendChild(newRow);
 
-//   // Update resultsB display (optional, for consistency)
-//   const resultsB = document.getElementById("resultsB");
-//   const msgB = isBalancedResult
-//     ? `Brackets are balanced ==> ${brackets}`
-//     : `Brackets are NOT balanced ==> ${brackets}`;
-//   resultsB.innerHTML = msgB;
-// }
+
 }
 function isBalanced(brackets) {
   let stack = [];
@@ -89,6 +93,7 @@ function isBalanced(brackets) {
   // Final check: return true if the stack is empty, meaning all brackets were balanced
   return stack.length === 0;
 }
+
 
 function updateCopyrightYear() {
   const currentYear = new Date().getFullYear();
