@@ -4,29 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("btnSubmit")
     .addEventListener("click", handleButtonClick);
     document.getElementById("btnInput").addEventListener("click", () => {
-      const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
-      const userBracket = inputField.value.trim(); //trim whitespace
-      if (userBracket === '') {
-        alert('Please enter a string of brackets.');  
-        return; // Exit the function if the input is empty
-      }
-      checkBrackets(userBracket);
-      inputField.value = ''; // Clear the input field
-
+      handleInput();
     });
     
     document.querySelector('input[placeholder="Input to check for balanced brackets"]').addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
         event.preventDefault(); // Prevent form submission if inside a form
-        const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
-        const userBracket = inputField.value.trim(); //trim whitespace
-        if (userBracket === '') {
-          alert('Please enter a string of brackets.');  
-          return; // Exit the function if the input is empty
-        }
-        checkBrackets(userBracket);
-        inputField.value = ''; // Clear the input field
-  
+        handleInput();
       }
     });
 });
@@ -94,7 +78,17 @@ function isBalanced(brackets) {
   return stack.length === 0;
 }
 
-
+function handleInput() {
+  const inputField = document.querySelector('input[placeholder="Input to check for balanced brackets"]');
+      const userBracket = inputField.value.trim(); //trim whitespace
+      if (userBracket === '') {
+        alert('Please enter a string of brackets.');  
+        return; // Exit the function if the input is empty
+      }
+      checkBrackets(userBracket);
+      inputField.value = ''; // Clear the input field
+}
+// Function to update the copyright year in the footer
 function updateCopyrightYear() {
   const currentYear = new Date().getFullYear();
   document.getElementById("copyrightYear").textContent = currentYear;
