@@ -36,19 +36,21 @@ Dynamically updates the copyright year in the footer of the application.
    git clone https://github.com/your-username/balanced-brackets-checker.git
 
    2. Open index.html in a web browser to use the application.
-Usage
+## Usage
 Enter a string containing brackets ({}, (), []) in the input field.
 Click the "Try it!" button or press the "Enter" key.
 The application will display the result in the table, indicating if the brackets are balanced.
-Example
+## Example
 Input: {[()()]}
 Output: ✅ Balanced
 
 Input: {[(])}
 Output: ❌ Not Balanced
 
-Contributing
+## Contributing
 Feel free to fork the project, make improvements, and submit pull requests. Contributions are welcome!
 
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+## Status
+Portfolio Review
