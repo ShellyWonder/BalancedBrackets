@@ -4,12 +4,15 @@
     <title>Balanced Brackets: A Coding Project by SJ Wonder</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-    crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css"
@@ -34,44 +37,83 @@
   </head>
 
   <body class="d-flex flex-column h-100">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand logoFont" href="index.html"><img src="img/logoMarkWhite.png" class="p-1" width="30"
-          height="39" />Balanced Brackets</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" target="_blank"
-              href="https://github.com/ShellyWonder/BalancedBrackets">Git Repo</a></li>
-          <li class="nav-item"><a class="nav-link" target="_blank"
-              href="https://sjwonder-portfolio-2022.netlify.app/#contact">Contact</a></li>
-        </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand logoFont" href="index.html"
+          ><img
+            src="img/logoMarkWhite.png"
+            class="p-1"
+            width="30"
+            height="39"
+          />Balanced Brackets</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://github.com/ShellyWonder/BalancedBrackets"
+                >Git Repo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                target="_blank"
+                href="https://sjwonder-portfolio-2022.netlify.app/#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Main -->
-  <main class="container-fluid flex-shrink-0 pt-5 px-5">
-    <div class="row pt-5">
-      <div class="col-12 col-md-6">
-        <h1>Check for <span class="logoFont">Balanced Brackets</span> in a String</h1>
+    <!-- Main -->
+    <main class="container-fluid flex-shrink-0 pt-5 px-5">
+      <div class="row pt-4 pt-md-5">
+        <!-- First Column: Image and Description -->
+        <div class="col-12 col-md-6 order-1">
+          <img src="/img/balancedBracketsImg.png" class="img-fluid mb-3" />
+          <h1>
+            Check for <span class="logoFont">Balanced Brackets</span> in a
+            String
           </h1>
           <p class="lead">
-            Given a string containing brackets <strong>({}, (), [])</strong>, this program
-            determines if all brackets have a matching counterpart. <br />
+            Given a string containing brackets <strong>({}, (), [])</strong>,
+            this program determines if all brackets have a matching counterpart.
+            <br />
             If all brackets in the string form balanced pairs, it returns
-            <strong>true</strong>. If not, it returns <strong>false</strong>. <br />
-            If the string contains characters other than brackets, a programatic filter disregards them 
-            and returns a result determinded solely by the brackets. 
+            <strong>true</strong>. If not, it returns <strong>false</strong>.
+            <br />
+            If the string contains characters other than brackets, a
+            programmatic filter disregards them and returns a result determined
+            solely by the brackets.
           </p>
           <p class="lead">
-            Are brackets <strong>[()]{}{[()()]()}</strong> balanced? Press the button to find out!
+            Are brackets <strong>[()]{}{[()()]()}</strong> balanced? Press
+            <strong>Find Out!</strong>
           </p>
+        </div>
+
+        <!-- Second Column: Table -->
+        <div class="col-12 col-md-6 order-2 order-md-1">
           <table class="table table-dark table-striped examples">
             <caption>
               Note: You can use these scenarios to test your function
@@ -103,56 +145,83 @@
               </tr>
               <tr>
                 <td>[()]{}{[()()]()}</td>
-                <td><button id="btnSubmit" type="button" class="btn btn-warning">Find Out!</button></td>
+                <td>
+                  <button id="btnSubmit" type="button" class="btn btn-warning">
+                    Find Out!
+                  </button>
+                </td>
               </tr>
             </tbody>
           </table>
-      </div>
-      <div class="col-12 col-md-6 order-first order-md-2">
 
-        <div class="row">
-          <div class="col-12">
-        <img src="/img/balancedBracketsImg.png" class="img-fluid" />
-          </div>
-          <div class="col-12 mt-1">
-            <h2 class="text-center logoFont">Give it a Try!</h2>
-            <div class="lead text-center">
-            <p >Enter your string of brackets below. Then click the button.<br>
-             The result(s) will be displayed in the table:</p>
+          <!-- Third Column: Input Section -->
+          <div class="row pt-4 ">
+            <div class="col-12  order-3 order-md-2 mt-1">
+              <h2 class="text-center logoFont">Give it a Try!</h2>
+              <div class="lead text-center">
+                <p>
+                  Enter your string of brackets below. Then click the button.<br />
+                  The result(s) will be displayed in the table:
+                </p>
+              </div>
+              <div class="input-group mb-3 px-2 px-md-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Input to check for balanced brackets"
+                  aria-label="Recipient's input"
+                  aria-describedby="button Input"
+                />
+                <button
+                  class="btn btn-primary btn-outline-warning"
+                  type="button"
+                  id="btnInput"
+                >
+                  Try it!
+                </button>
+              </div>
             </div>
-            <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Input to check for balanced brackets" aria-label="Recipient's input" aria-describedby="button Input">
-              <button class="btn btn-primary btn-outline-warning" type="button" id="btnInput">Try it!</button>
-            </div>
-            
-  </main>
-
-  <!-- Footer -->
-  <footer class="mt-auto py-3 bg-dark">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-lg-3 gy-2">
-        <div class="col text-light">
-          <div>
-            © <span id="copyrightYear"></span>&nbsp;SJ Wonder |
-            <a href="mailto:Shelly@wonderwebdev">Shelly@wonderwebdev.com</a>
           </div>
-        </div>
-        <div class="col d-flex align-items-center justify-content-center">
-          <img src="img/White logo - no background.svg" alt="SJ Wonder Logo" height="65" />
-        </div>
-        <div class="col d-flex align-items-center justify-content-end">
-          <a href="https://www.linkedin.com/in/shelly-wonder-153990233/" class="me-3"><i
-              class="fab fa-linkedin fa-2x"></i></a>
-          <a href="https://github.com/ShellyWonder"><i class="fab fa-github fa-2x"></i></a>
         </div>
       </div>
-    </div>
-  </footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-3 bg-dark">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 gy-2">
+          <div class="col text-light">
+            <div>
+              © <span id="copyrightYear"></span>&nbsp;SJ Wonder |
+              <a href="mailto:Shelly@wonderwebdev">Shelly@wonderwebdev.com</a>
+            </div>
+          </div>
+          <div class="col d-flex align-items-center justify-content-center">
+            <img
+              src="img/White logo - no background.svg"
+              alt="SJ Wonder Logo"
+              height="65"
+            />
+          </div>
+          <div class="col d-flex align-items-center justify-content-end">
+            <a
+              href="https://www.linkedin.com/in/shelly-wonder-153990233/"
+              class="me-3"
+              ><i class="fab fa-linkedin fa-2x"></i
+            ></a>
+            <a href="https://github.com/ShellyWonder"
+              ><i class="fab fa-github fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
-    crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/site.js"></script>
-    
   </body>
 </html>
