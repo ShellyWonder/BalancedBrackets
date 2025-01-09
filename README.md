@@ -33,11 +33,12 @@ Dynamically updates the copyright year in the footer of the application.
 
 ## Getting Started
 
-Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/balanced-brackets-checker.git
+## Clone the repository:
+  
+  1. git clone https://github.com/your-username/balanced-brackets-checker.git
 
-   Open index.html in a web browser to use the application.
+   2. Open index.html in a web browser to use the application.
+   
 ## Usage
 Enter a string containing brackets ({}, (), []) in the input field.
 Click the "Try it!" button or press the "Enter" key.
