@@ -13,7 +13,6 @@ This project is a web-based application that allows users to check if a given st
 ### `index.html`
 Contains the structure of the web application. Key elements include:
 - An input field for users to enter their own bracket string to test.
-- A regex pattern to filter out non-bracket characters.
 - A button labeled "Try it!" for triggering the balance check.
 - "Enter" key support for triggering the balance check.
 - A table to display the results of the balance checks.
