@@ -12,8 +12,10 @@ This project is a web-based application that allows users to check if a given st
 
 ### `index.html`
 Contains the structure of the web application. Key elements include:
-- An input field for users to enter their bracket string.
+- An input field for users to enter their own bracket string to test.
+- A regex pattern to filter out non-bracket characters.
 - A button labeled "Try it!" for triggering the balance check.
+- "Enter" key support for triggering the balance check.
 - A table to display the results of the balance checks.
 
 ### `style.css`
@@ -31,11 +33,11 @@ Dynamically updates the copyright year in the footer of the application.
 
 ## Getting Started
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone https://github.com/your-username/balanced-brackets-checker.git
 
-   2. Open index.html in a web browser to use the application.
+   Open index.html in a web browser to use the application.
 ## Usage
 Enter a string containing brackets ({}, (), []) in the input field.
 Click the "Try it!" button or press the "Enter" key.
@@ -53,4 +55,4 @@ Feel free to fork the project, make improvements, and submit pull requests. Cont
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 ## Status
-Portfolio Review
+Portfolio Ready
