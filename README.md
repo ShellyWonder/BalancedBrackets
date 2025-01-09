@@ -35,10 +35,11 @@ Dynamically updates the copyright year in the footer of the application.
 
 ## Clone the repository:
   
-  1. git clone https://github.com/your-username/balanced-brackets-checker.git
+  1. git clone https://github.com/ShellyWonder/BalancedBrackets
+ 
 
    2. Open index.html in a web browser to use the application.
-   
+
 ## Usage
 Enter a string containing brackets ({}, (), []) in the input field.
 Click the "Try it!" button or press the "Enter" key.
